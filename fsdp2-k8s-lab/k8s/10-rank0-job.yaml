@@ -1,0 +1,39 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: fsdp-rank0
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: fsdp-training
+        fsdp-role: master
+    spec:
+      restartPolicy: Never
+      nodeSelector:
+        fsdp-rank: "0"
+      containers:
+        - name: trainer
+          image: REPLACE_ECR_URI:latest
+          imagePullPolicy: Always
+          env:
+            - {name: MODEL_NAME, value: "Qwen/Qwen2.5-0.5B-Instruct"}
+            - {name: DATASET_NAME, value: "tatsu-lab/alpaca"}
+            - {name: DATASET_SAMPLES, value: "512"}
+            - {name: MAX_LENGTH, value: "128"}
+            - {name: EPOCHS, value: "1"}
+            - {name: BATCH_SIZE, value: "1"}
+            - {name: GRAD_ACCUM, value: "4"}
+            - {name: NCCL_DEBUG, value: "INFO"}
+            - {name: NCCL_SOCKET_IFNAME, value: "eth0"}
+          ports:
+            - containerPort: 29500
+          command: ["/bin/bash", "-lc"]
+          args:
+            - >
+              torchrun --nnodes=2 --nproc_per_node=1 --node_rank=0
+              --master_addr=0.0.0.0 --master_port=29500 /app/train.py
+          resources:
+            limits:
+              nvidia.com/gpu: 1
