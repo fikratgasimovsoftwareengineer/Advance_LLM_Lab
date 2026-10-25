@@ -1,0 +1,14 @@
+[
+ {"question":"Entro quando devo prenotare un esame?","expected_doc_id":"D01"},
+ {"question":"Dove vedo il calendario degli esami?","expected_doc_id":"D01"},
+ {"question":"Posso pagare con carta?","expected_doc_id":"D02"},
+ {"question":"A chi segnalo un errore di incasso?","expected_doc_id":"D02"},
+ {"question":"Chi decide sul riconoscimento dei corsi precedenti?","expected_doc_id":"D03"},
+ {"question":"Quali documenti servono per chiedere crediti?","expected_doc_id":"D03"},
+ {"question":"I tutor possono modificare i voti?","expected_doc_id":"D04"},
+ {"question":"Come contatto un tutor?","expected_doc_id":"D04"},
+ {"question":"La biblioteca permette di leggere dispense?","expected_doc_id":"D05"},
+ {"question":"Tutti gli utenti possono accedere a ogni manuale?","expected_doc_id":"D05"},
+ {"question":"Un agente può inviare comunicazioni di massa senza permesso?","expected_doc_id":"D06"},
+ {"question":"Chi approva le comunicazioni esterne?","expected_doc_id":"D06"}
+]

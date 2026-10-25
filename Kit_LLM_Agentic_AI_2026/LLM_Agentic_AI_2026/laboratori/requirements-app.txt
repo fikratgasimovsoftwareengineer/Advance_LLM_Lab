@@ -1,0 +1,6 @@
+# Ambiente separato dall'ambiente vLLM. Risolvere versioni con pip freeze dopo test.
+openai>=1.60
+requests>=2.32
+sentence-transformers>=3.0
+chromadb>=0.6
+langgraph>=0.3

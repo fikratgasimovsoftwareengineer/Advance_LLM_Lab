@@ -1,0 +1,7 @@
+# Ambiente training distinto; adeguare PyTorch alla CUDA e driver reali.
+transformers>=4.51
+trl>=0.18
+peft>=0.15
+accelerate>=1.0
+datasets>=3.0
+torch>=2.5
