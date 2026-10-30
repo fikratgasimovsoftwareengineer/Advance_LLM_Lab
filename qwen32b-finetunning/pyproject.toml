@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qwen-finetuning"
+version = "0.1.0"
+description = "Qwen3-32B QLoRA + SFT + FSDP2 fine-tuning project"
+requires-python = ">=3.11,<3.14"
+
+dependencies = [
+    "torch",
+    "transformers>=4.51.0",
+    "datasets",
+    "huggingface-hub",
+    "peft",
+    "trl",
+    "accelerate",
+    "bitsandbytes",
+    "numpy"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

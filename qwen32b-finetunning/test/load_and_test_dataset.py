@@ -1,30 +1,47 @@
-from qwen_finetuning.data.loader_validator import (
-    get_dataset,
-    validate_dataset,
+from qwen_finetuning.models.model_loader import (
+    get_model,
+)
+
+from qwen_finetuning.models.tokenizer import (
+    get_tokenizer,
+)
+
+from qwen_finetuning.models.lora_config import (
+    get_lora_config,
 )
 
 
 def main():
-    DATASET_NAME = "trl-lib/Capybara"
-    # 1. Download / load Capybara
-    dataset = get_dataset(DATASET_NAME)
 
-    print("\n==============================")
-    print("RAW DATASET")
-    print("==============================")
-    print(dataset)
+    print("Loading tokenizer...")
 
-    # 2. Validation
-    validated_data = validate_dataset(dataset)
+    tokenizer = get_tokenizer()
 
-    print("\n==============================")
-    print("VALIDATED DATASET")
-    print("==============================")
+    print("Tokenizer OK")
 
-    for split_name, split in validated_data.items():
-        print(
-            f"{split_name}: {len(split)} samples"
-        )
+    print("Loading Qwen3-32B 4-bit...")
+
+    model = get_model()
+
+    print("Model OK")
+
+    print(
+        "Model class:",
+        model.__class__.__name__
+    )
+
+    print(
+        "Device:",
+        model.device
+    )
+
+    print(
+        "LoRA config:"
+    )
+
+    lora_config = get_lora_config()
+
+    print(lora_config)
 
 
 if __name__ == "__main__":

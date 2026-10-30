@@ -4,8 +4,12 @@ src/qwen_finetuning/__init__.py
 src/qwen_finetuning.egg-info/PKG-INFO
 src/qwen_finetuning.egg-info/SOURCES.txt
 src/qwen_finetuning.egg-info/dependency_links.txt
+src/qwen_finetuning.egg-info/requires.txt
 src/qwen_finetuning.egg-info/top_level.txt
 src/qwen_finetuning/data/__init__.py
 src/qwen_finetuning/data/loader_validator.py
 src/qwen_finetuning/models/__init__.py
+src/qwen_finetuning/models/lora_config.py
+src/qwen_finetuning/models/quantizazione.py
+src/qwen_finetuning/models/tokenizer.py
 src/qwen_finetuning/training/__init__.py

@@ -10,8 +10,7 @@ def get_tokenizer():
     """
     
     tokenizer = AutoTokenizer.from_pretrained(
-        MODEL_NAME,
-        use_fast=True
+        MODEL_NAME
     )
     
     if tokenizer.pad_token is None:
