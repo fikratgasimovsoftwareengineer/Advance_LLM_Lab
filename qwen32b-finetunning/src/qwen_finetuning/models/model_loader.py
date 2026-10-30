@@ -5,7 +5,7 @@ from qwen_finetuning.models.quantizazione import (
 )
 
 
-MODEL_NAME = "Qwen/Qwen3-32B"
+MODEL_NAME = "Qwen/Qwen3-14B"
 
 def get_model():
     
@@ -18,7 +18,7 @@ def get_model():
         quantization_config=quantization_config,
         torch_dtype = torch.bfloat16,
         low_cpu_memory_usage="True" 
-         
+
     )
     model.config.use_cache = False
     

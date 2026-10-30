@@ -19,7 +19,7 @@ def get_configuration_config():
         per_device_eval_batch_size=1,
         gradient_accumulation_steps=8,
         learning_rate=2e-4,
-        max_length=1024,
+        max_length=512,
         
         assistant_only_loss=True,
         packing=False,
