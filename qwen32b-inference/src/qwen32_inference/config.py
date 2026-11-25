@@ -3,9 +3,9 @@ from typing import Literal
 from qwen32_inference.config import *
 import yaml
 from pathlib import Path
-
+import os
 BASE_DIR = Path(__file__).resolve().parent
-CONFIG_DIR = BASE_DIR / "configs"
+CONFIG_DIR = BASE_DIR
 
 class ModelConfig(BaseModel):
     model_name:str
@@ -32,11 +32,9 @@ class ApplicationConfig(BaseModel):
     
     
 
-def load_config_yaml(
-    config_dir: str | Path = CONFIG_DIR
+def load_config_yaml(conf_dir:str
 ) -> ApplicationConfig:
 
-    config_dir = Path(config_dir)
 
     configuration = {}
 
@@ -45,12 +43,14 @@ def load_config_yaml(
         "inference.yaml",
         "model.yaml"
     ]
+    
+    file_path = CONFIG_DIR / conf_dir
+   
 
     for filename in files:
+        file_path_join = file_path / filename
 
-        file_path = config_dir / filename
-
-        with file_path.open("r", encoding="utf-8") as read_file:
+        with file_path_join.open("r", encoding="utf-8") as read_file:
 
             data = yaml.safe_load(read_file)
 

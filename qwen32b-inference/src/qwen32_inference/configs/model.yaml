@@ -1,4 +1,4 @@
 model:
   model_name: "Qwen/Qwen3-32B-AWQ"
-  quantization_type : "awq"
-  dtype: "bfloat16"
+  quantization: "awq"
+  dtype: "float16"
