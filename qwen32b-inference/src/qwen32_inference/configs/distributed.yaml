@@ -1,0 +1,6 @@
+distributed:
+  tensor-parallel-size: 2
+  pipeline-parallel-size: 1
+  distributed_executor_backend: "ray"
+
+

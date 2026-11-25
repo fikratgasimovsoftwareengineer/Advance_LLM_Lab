@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qwen32b-inference"
+version = "0.1.0"
+description = "Distributed Qwen3-32B Inference Platform"
+requires-python = ">=3.11,<3.14"
+
+dependencies = [
+    "torch",
+    "transformers>=4.51.0",
+    "datasets",
+    "huggingface-hub",
+    "peft",
+    "trl",
+    "accelerate",
+    "bitsandbytes",
+    "numpy",
+    "pydantic",
+    "pydantic-settings",
+    "pyyaml"
+]
+[project.optional-dependencies]
+api = [
+    "fastapi",
+    "uvicorn[standard]",
+    "httpx"
+]
+
+inference = [
+    "vllm",
+    "ray[default]"
+]
+
+dev = ["pytest",
+"pytest-asyncio"]
+[tool.setuptools.packages.find]
+where = ["src"]

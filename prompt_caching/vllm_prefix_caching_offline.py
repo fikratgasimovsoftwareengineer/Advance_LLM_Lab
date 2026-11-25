@@ -65,7 +65,7 @@ def block_hash_chain(token_ids: list[int], size: int = BLOCK_SIZE) -> list[str]:
         hashes.append(current_hash)
         parent_hash = current_hash
     return hashes
-
+    
 
 @dataclass
 class PrefixBlockIndex:

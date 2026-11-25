@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: qwen32b-inference
+Version: 0.1.0
+Summary: Distributed Qwen3-32B Inference Platform
+Requires-Python: <3.14,>=3.11
+Requires-Dist: torch
+Requires-Dist: transformers>=4.51.0
+Requires-Dist: datasets
+Requires-Dist: huggingface-hub
+Requires-Dist: peft
+Requires-Dist: trl
+Requires-Dist: accelerate
+Requires-Dist: bitsandbytes
+Requires-Dist: numpy
+Requires-Dist: pydantic
+Requires-Dist: pydantic-settings
+Requires-Dist: pyyaml
+Provides-Extra: api
+Requires-Dist: fastapi; extra == "api"
+Requires-Dist: uvicorn[standard]; extra == "api"
+Requires-Dist: httpx; extra == "api"
+Provides-Extra: inference
+Requires-Dist: vllm; extra == "inference"
+Requires-Dist: ray[default]; extra == "inference"
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-asyncio; extra == "dev"
