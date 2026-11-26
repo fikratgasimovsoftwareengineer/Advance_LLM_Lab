@@ -13,12 +13,12 @@ class ModelConfig(BaseModel):
     dtype:Literal["float16", "bfloat16", "float32"]
     
 class InferenceConfig(BaseModel):
-    gpu_memory_utilizzation:int = Field(ge=0,le=1)
+    gpu_memory_utilization:float = Field(ge=0,le=1)
     max_model_len:int = Field(ge=0)
-    enable_prexic_caching:bool = Field(default=True)
+    enable_prefix_caching:bool = Field(default=True)
     host:str
     port:int
-    max_seq_len:int=  Field(gt=0)
+    max_num_seqs:int=  Field(gt=0)
     
 class DistributedConfig(BaseModel):
     tensor_parallel_size:int = Field(gt=0)

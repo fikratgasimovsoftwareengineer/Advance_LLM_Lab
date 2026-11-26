@@ -7,8 +7,8 @@ def test_load_configuration():
 
     assert config.model.model_name == "Qwen/Qwen3-32B-AWQ"
     assert config.distributed.tensor_parallel_size == 2
-    assert config.inference.enable_prexic_caching is True
-    assert config.inference.gpu_memory_utilizzation == 0.90
+    assert config.inference.gpu_memory_utilization == 0.90
+    assert config.inference.enable_prefix_caching == True
 
     print(config.model_dump_json(indent=4))
     print("Configuration test passed successfully")
